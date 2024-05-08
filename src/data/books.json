@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "To Kill a Mockingbird",
+    "owner": "John",
+    "availability": 1
+  },
+  {
+    "id": 2,
+    "title": "1984",
+    "owner": "Alice",
+    "availability": 1
+  },
+  {
+    "id": 3,
+    "title": "The Great Gatsby",
+    "owner": "Emily",
+    "availability": 0
+  },
+  {
+    "id": 4,
+    "title": "Pride and Prejudice",
+    "owner": "Michael",
+    "availability": 1
+  },
+  {
+    "id": 5,
+    "title": "The Catcher in the Rye",
+    "owner": "Sarah",
+    "availability": 0
+  },
+  {
+    "id": 6,
+    "title": "Moby-Dick",
+    "owner": "David",
+    "availability": 1
+  },
+  {
+    "id": 7,
+    "title": "The Hobbit",
+    "owner": "Jessica",
+    "availability": 0
+  },
+  {
+    "id": 8,
+    "title": "Frankenstein",
+    "owner": "Robert",
+    "availability": 1
+  },
+  {
+    "id": 9,
+    "title": "The Picture of Dorian Gray",
+    "owner": "Elizabeth",
+    "availability": 0
+  },
+  {
+    "id": 10,
+    "title": "War and Peace",
+    "owner": "Thomas",
+    "availability": 0
+  }
+]
