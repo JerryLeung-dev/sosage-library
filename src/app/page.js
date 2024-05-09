@@ -7,9 +7,48 @@ import SosModal from "@/components/SosModal";
 import { useState } from 'react';
 
 import INITIAL_BOOKS from '../data/books.json';
-
+//search bar
+//pagination
+//Table 
+// modal 
 export default function Home() {
   const [books, setBooks] = useState(INITIAL_BOOKS || []);
+
+  function handleBorrow(id) {
+    const updatedBooks = books.map(book => {
+      if(book.id === id){
+        if(book.availability) {
+          return {...book, availability: 0}
+        } else {
+          alert("The book is currently not avaialble");
+        }
+      }
+      return book;
+    })
+    setBooks(updatedBooks);
+  }
+
+  function handleReturn(id) {
+    const updatedBooks = books.map(book => {
+      if(book.id === id){
+        if(!book.availability) {
+          return {...book, availability: 1}
+        } else {
+          alert("The book has been returned");
+        }
+      }
+      return book;
+    })
+    setBooks(updatedBooks);
+  }
+
+  function handleDelete(id) {
+    const isConfirmed = confirm("Do you want to delete the book?");
+    if(isConfirmed) {
+      const updatedBooks = books.filter(book => book.id !== id);
+      setBooks(updatedBooks);
+    } 
+  }
   return (
     <>
       <main className={styles.main}>
@@ -25,7 +64,7 @@ export default function Home() {
           </div>
           <div className={styles.table}>
             {books && books.length > 0 ? (
-              <BookTable books={books}/>
+              <BookTable books={books} onBorrow={handleBorrow} onReturn={handleReturn} onDelete={handleDelete}/>
             ) : (
               <div>No books available</div>
             )}
